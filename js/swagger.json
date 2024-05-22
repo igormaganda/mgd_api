@@ -1,0 +1,176 @@
+{
+    "openapi": "3.1.0",
+    "info":{
+        "description": "<p>Api de recherche <strong>B2B</strong></p>",
+        "version": "1.0.0",
+        "title": "API documentation"
+    },
+    "servers":[
+        {
+            "url": "https://api22.mgd-crm.com/"
+        }
+    ],
+    "tags":[
+        {
+            "name": "count",
+            "description": "Faire le comptage"
+        },
+        {
+            "name": "list",
+            "description": "Récuperer les resultat du comptage"
+        },
+        {
+            "name": "blacklist",
+            "description": "Mettre certains adresse en blacklist"
+        }
+    ],
+    "paths":{
+        "/":{
+            "post":{
+                "tags":[
+                    "count"
+                ],
+                "summary": "obtenir le comptage",
+                "operationId": "getCount",
+                "security": [
+                    {
+                      "bearerAuth": []
+                    }
+                  ],
+                  "requestBody": {
+                    "description": "Requête pour obtenir le comptage",
+                    "required": true,
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "example": {
+                          "type": "emailpro",
+                          "method": "count"
+                        }
+                      }
+                    }             
+                }             
+            }
+        },
+        "/list":{
+            "post":{
+                "tags":[
+                    "list"
+                ],
+                "summary": "obtenir le resultat ",
+                "operationId": "getCount",
+                "security": [
+                    {
+                      "bearerAuth": []
+                    }
+                  ],
+                "responses":{
+                    "200": {
+                        "description": "Renvoie la data",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/list"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Non autorisé"
+                      }
+                }                
+            }
+        },
+        "/blacklist":{
+            "post":{
+                "tags":[
+                    "blacklist"
+                ],
+                "summary": "Blacklisté une adresse ",
+                "operationId": "getCount",
+                "security": [
+                    {
+                      "bearerAuth": []
+                    }
+                  ],
+                "responses":{
+                    "200": {
+                        "description": "Renvoie la data",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/blacklist"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Non autorisé"
+                      }
+                }                
+            }
+        }
+    },
+
+    "components":{
+        "securitySchemes": {
+            "bearerAuth": {
+              "type": "http",
+              "scheme": "bearer",
+              "bearerFormat": "JWT"
+            }
+          },
+        "schemas": {
+            "count": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": 200
+                },
+                "session_id":{
+                    "type": "string"
+                },
+                "total":{
+                    "type": "integer"
+                }
+
+              }
+            },
+            "list": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "session_id":{
+                      "type": "string"
+                  },
+                  "total":{
+                      "type": "integer"
+                  }
+  
+                }
+            },
+            "blacklist": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "session_id":{
+                      "type": "string"
+                  },
+                  "total":{
+                      "type": "integer"
+                  }
+  
+                }
+              }
+        }
+    }
+}

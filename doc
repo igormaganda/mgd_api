@@ -1,0 +1,18 @@
+les variables
+
+ca: pour les chiffres d'affaires , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+cp: pour les codes postaux , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+ville: pour les villes , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+cat: pour les secteurs d'activités , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+naf: pour les NAF , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+forme: pour les formes juridiques , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+eff: pour les effectifs , il cherche les occurences qui sont egale a cette(ces) valeur(s) dans la base de données
+
+Pour les inclusions par defaut c'est true, si c'est false il a exclusion 
+inclu_ca  : pour inclure ou exclure les chiffres d'affaires
+inclu_cp  : pour inclure ou exclure les codes postaux
+inclu_ville  : pour inclure ou exclure les villes
+inclu_cat  : pour inclure ou exclure les secteurs d'activités
+inclu_naf  : pour inclure ou exclure les NAF
+inclu_forme  : pour inclure ou exclure les formes juridiques
+inclu_eff  : pour inclure ou exclure les effectifs
