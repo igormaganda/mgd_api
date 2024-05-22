@@ -22,7 +22,7 @@ class UserController {
 
     public function __construct() {
       
-        $this->PARAM_hote        ='localhost';
+        $this->PARAM_hote        ='156.67.25.120';
         $this->PARAM_port        ='5432';
         $this->PARAM_nom_bd      ='datamart3';
         $this->PARAM_utilisateur ='postgres';
