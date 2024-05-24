@@ -1,6 +1,5 @@
 <?php
     require_once "Controllers/UserController.php";
-    require_once("../Datamart/class/Bdd.php");
 
     header('Content-Type: application/json');
     $headers = getallheaders();

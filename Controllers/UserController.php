@@ -54,7 +54,7 @@ class UserController {
     }
 
     public function login($username, $password) {
-        require 'vendor/autoload.php';
+    
         $secret_key = getenv('JWT_SECRET_KEY');
         // Valider les entrées
         // if (empty($username) || empty($password)) {
@@ -103,7 +103,6 @@ class UserController {
         return $result;
     }
     public function register($login, $password) {
-        require 'vendor/autoload.php';
         $secret_key = getenv('JWT_SECRET_KEY');
 
         // Valider l'e-mail
